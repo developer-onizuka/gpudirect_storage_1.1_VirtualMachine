@@ -73,16 +73,20 @@ sudo reboot
 # 6. Check VFIO at Host Machine
 You can find the Kernel driver replaced by "vfio-pci". 
 I could not use the NVMe Device using Silicon Motion's controller [126f:2263] as PassThrough. 
-I use the Samsung and Hynix NVMe instead of KLEVV which used Silicon Motion controller.
+I use the Samsung instead of KLEVV which used Silicon Motion controller.
 ```
-[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-5.8.0-59-generic root=UUID=33af4bcd-d3f9-4e6f-9ddd-5d6b2d02c044 ro quiet splash intel_iommu=on vfio_iommu_type1.allow_unsafe_interrupts=1 iommu=pt vfio-pci.ids=10de:1cb1,10de:0fb9,144d:a804 quiet splash vt.handoff=7
-[    0.046801] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.8.0-59-generic root=UUID=33af4bcd-d3f9-4e6f-9ddd-5d6b2d02c044 ro quiet splash intel_iommu=on vfio_iommu_type1.allow_unsafe_interrupts=1 iommu=pt vfio-pci.ids=10de:1cb1,10de:0fb9,144d:a804 quiet splash vt.handoff=7
-[    0.509191] VFIO - User Level meta-driver version: 0.3
-[    0.509355] vfio-pci 0000:01:00.0: vgaarb: changed VGA decodes: olddecodes=io+mem,decodes=io+mem:owns=none
-[    0.527121] vfio_pci: add [10de:1cb1[ffffffff:ffffffff]] class 0x000000/00000000
-[    0.547118] vfio_pci: add [10de:0fb9[ffffffff:ffffffff]] class 0x000000/00000000
-[    0.567150] vfio_pci: add [144d:a804[ffffffff:ffffffff]] class 0x000000/00000000
-[    3.166385] vfio-pci 0000:01:00.0: vgaarb: changed VGA decodes: olddecodes=io+mem,decodes=io+mem:owns=none
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-5.4.0-42-generic root=UUID=33af4bcd-d3f9-4e6f-9ddd-5d6b2d02c044 ro quiet splash intel_iommu=on vfio_iommu_type1.allow_unsafe_interrupts=1 iommu=pt vfio-pci.ids=10de:1cb3,10de:0fb9 quiet splash vt.handoff=7
+[    0.068100] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.4.0-42-generic root=UUID=33af4bcd-d3f9-4e6f-9ddd-5d6b2d02c044 ro quiet splash intel_iommu=on vfio_iommu_type1.allow_unsafe_interrupts=1 iommu=pt vfio-pci.ids=10de:1cb3,10de:0fb9 quiet splash vt.handoff=7
+[    0.516059] vfio-pci 0000:01:00.0: vgaarb: changed VGA decodes: olddecodes=io+mem,decodes=io+mem:owns=none
+[    4.392593] vfio-pci 0000:01:00.0: vgaarb: changed VGA decodes: olddecodes=io+mem,decodes=io+mem:owns=none
+[  525.583440] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x19@0x900
+[ 1681.198322] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x19@0x900
+[ 2148.920261] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x19@0x900
+[ 2149.156401] vfio-pci 0000:03:00.0: vfio_ecap_init: hiding ecap 0x19@0x168
+[ 2149.156410] vfio-pci 0000:03:00.0: vfio_ecap_init: hiding ecap 0x1e@0x190
+[ 5174.420024] vfio-pci 0000:01:00.0: vfio_ecap_init: hiding ecap 0x19@0x900
+[ 5174.664185] vfio-pci 0000:03:00.0: vfio_ecap_init: hiding ecap 0x19@0x168
+[ 5174.664194] vfio-pci 0000:03:00.0: vfio_ecap_init: hiding ecap 0x1e@0x190
 
 $ lspci -nnk -d 10de:1cb3
 01:00.0 VGA compatible controller [0300]: NVIDIA Corporation GP107GL [Quadro P400] [10de:1cb3] (rev a1)
