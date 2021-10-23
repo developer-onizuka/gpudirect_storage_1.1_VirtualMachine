@@ -5,7 +5,7 @@ https://github.com/developer-onizuka/what_is_GPUDirect-Storage
 # 0. Hardware
 ```
 (1) Optiplex 5050SFF  ... JPY 29,150
-    Intel(R) Core(TM) i3-7500 CPU @ 3.50GHz
+    Intel(R) Core(TM) i5-7500 CPU @ 3.50GHz
     DIMM slot1: DDR4 DIMM 8GB (Micron)
     DIMM slot2: Empty
     DIMM slot3: Empty
@@ -24,10 +24,7 @@ https://github.com/developer-onizuka/what_is_GPUDirect-Storage
     SM961 Series MZ-VLW1280 128GB M.2 Type2280 PCIe3x4 NVMe 
     P/N: MZVLW128HEGR-000L1
     Performance Spec: Read 2800MB/s, Write 600MB/s
-(6) ETC
-    -Zheino 2nd 9.5mm Note PC drive mounter ... JPY 899
-    -GLOTRENDS M.2 Heatsink ... JPY 650
-(7) NVIDIA Quadro P400 ... JPY 5,948
+(6) NVIDIA Quadro P400 ... JPY 5,948
 ```
 
 # 1. Install Ubuntu-20.04 on Host Machine
