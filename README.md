@@ -485,3 +485,14 @@ $ /usr/local/cuda/gds/tools/gdscheck -p
  IOMMU: disabled
  Platform verification succeeded
 ```
+# 16. Result of Throughput
+- GDS Seq Read
+```
+$ gdsio -f /mnt/test10G -d 0 -n 0 -w 1 -s 10G -x 0 -I 0 -T 10 -i 256K
+IoType: READ XferType: GPUD Threads: 1 DataSetSize: 16117760/10485760(KiB) IOSize: 256(KiB) Throughput: 1.564272 GiB/sec, Avg_Latency: 155.969457 usecs ops: 62960 total_time 9.826353 secs
+```
+- CPU->GPU Seq Read
+```
+$ gdsio -f /mnt/test10G -d 0 -n 0 -w 1 -s 10G -x 2 -I 0 -T 10 -i 256K
+IoType: READ XferType: CPU_GPU Threads: 1 DataSetSize: 14325760/10485760(KiB) IOSize: 256(KiB) Throughput: 1.428755 GiB/sec, Avg_Latency: 170.763581 usecs ops: 55960 total_time 9.562250 secs
+```
